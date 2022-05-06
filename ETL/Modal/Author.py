@@ -66,7 +66,30 @@ class Author:
     def set_upi(self, upi):
         self.upi = upi
 
+    def get_affiliations_list(self):
+        return self.affiliations
+
+    def get_affiliations_name_list(self):
+        return [a.name for a in self.affiliations]
+
+    def get_interests_list(self):
+        return self.interests
+
+    def get_interests_name_list(self):
+        return [i.name for i in self.interests]
+
     def to_string(self):
         return "Author: " + self.name + " " + str(self.index) + " " + str(self.pc) + " " + str(self.cn) + " " + str(
             self.hi) + " " + str(self.pi) + " " + str(self.upi) + " " + str(self.affiliations) + " " + str(
             self.interests)
+
+    def to_dict(self):
+        return {
+            "index": self.index,
+            "name": self.name,
+            "pc": self.pc,
+            "cn": self.cn,
+            "hi": self.hi,
+            "pi": self.pi,
+            "upi": self.upi
+        }

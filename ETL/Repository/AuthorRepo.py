@@ -14,6 +14,8 @@ from ETL.Repository.InterestRepo import InterestRepo
 
 
 class AuthorRepo:
+    label = "Author"
+
     def __init__(self):
         pass
 
@@ -30,7 +32,7 @@ class AuthorRepo:
 
     @staticmethod
     def create_author(graph: Graph, author: Author):
-        node = Node("Author",
+        node = Node(AuthorRepo.label,
                     name=author.name,
                     index=author.index,
                     pc=author.pc,
@@ -55,9 +57,42 @@ class AuthorRepo:
     @staticmethod
     def get_author_by_name(graph: Graph, name: str):
         node_matcher = NodeMatcher(graph)
-        return node_matcher.match("Author", name=name).first()
+        return node_matcher.match(AuthorRepo.label, name=name).first()
 
     @staticmethod
     def get_author_by_id(graph: Graph, index: int):
         node_matcher = NodeMatcher(graph)
-        return node_matcher.match("Author", index=index).first()
+        return node_matcher.match(AuthorRepo.label, index=index).first()
+
+    @staticmethod
+    def get_all_author_dict(graph: Graph) -> dict:
+        cql = "match (n:Author) return (n);"
+        nodes = [x["n"] for x in graph.run(cql).data()]
+        return {x["name"]: x for x in nodes}
+
+    @staticmethod
+    def get_all_author_name(graph: Graph) -> set:
+        cql = "match (n:Author) return (n.name);"
+        return set(x["(n.name)"] for x in graph.run(cql).data())
+
+    @staticmethod
+    def get_affiliation_list(graph: Graph, author: Author):
+        res = []
+        for affiliation in author.affiliations:
+            node = AffiliationRepo.get_affiliation_by_name(graph, affiliation.name)
+            if node is not None:
+                res.append(node)
+        return res
+
+    @staticmethod
+    def get_interest_list(graph: Graph, author: Author):
+        res = []
+        for interest in author.interests:
+            node = InterestRepo.get_interest_by_name(graph, interest.name)
+            if node is not None:
+                res.append(node)
+        return res
+
+    @staticmethod
+    def to_neo4j_node(author: Author):
+        return Node(AuthorRepo.label, **author.to_dict())
