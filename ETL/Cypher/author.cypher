@@ -8,4 +8,14 @@ LOAD CSV WITH HEADERS FROM
 FIELDTERMINATOR ';'
 WITH line
 
-CREATE (author:Author {name: line.name, index: toInteger(line.index), hi: toInteger(line.hi), pc: toInteger(line.pc), pi: toFloat(line.pi), cn:toInteger(line.cn), upi:toFloat(line.upi)})
+CREATE (author:Author
+       {
+         name: line.name,
+         index: toInteger(line.index),
+         hi: toInteger(line.hi),
+         pc: toInteger(line.pc),
+         pi: toFloat(line.pi),
+         cn:toInteger(line.cn),
+         upi:toFloat(line.upi),
+         interest: line.interest
+       })

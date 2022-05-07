@@ -82,6 +82,56 @@ def get_author_interest_csv_path():
             return ""
 
 
+def get_paper_csv_path():
+    with open(resource_path, "r") as stream:
+        try:
+            obj = yaml.safe_load(stream)["CSV"]
+            return obj["paper_path"]
+        except yaml.YAMLError as exc:
+            print(exc)
+            return ""
+
+
+def get_paper_write_csv_path():
+    with open(resource_path, "r") as stream:
+        try:
+            obj = yaml.safe_load(stream)["CSV"]
+            return obj["paper_write_path"]
+        except yaml.YAMLError as exc:
+            print(exc)
+            return ""
+
+
+def get_paper_cite_csv_path():
+    with open(resource_path, "r") as stream:
+        try:
+            obj = yaml.safe_load(stream)["CSV"]
+            return obj["paper_cite_path"]
+        except yaml.YAMLError as exc:
+            print(exc)
+            return ""
+
+
+def get_paper_publication_csv_path():
+    with open(resource_path, "r") as stream:
+        try:
+            obj = yaml.safe_load(stream)["CSV"]
+            return obj["paper_publication_path"]
+        except yaml.YAMLError as exc:
+            print(exc)
+            return ""
+
+
+def get_paper_participate_csv_path():
+    with open(resource_path, "r") as stream:
+        try:
+            obj = yaml.safe_load(stream)["CSV"]
+            return obj["paper_participate_path"]
+        except yaml.YAMLError as exc:
+            print(exc)
+            return ""
+
+
 def timer(keyword=''):
     def func(fun):
         def wrapper(*args, **kwargs):

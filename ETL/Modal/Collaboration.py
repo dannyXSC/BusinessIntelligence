@@ -13,3 +13,4 @@ class Collaboration:
         self.name1 = name1
         self.name2 = name2
         self.count = count
+

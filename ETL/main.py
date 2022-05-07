@@ -6,7 +6,7 @@
 @createTime: 2022年05月06日 13点31分
 @Function: 主函数
 """
-from ETL.Service.TransformAuthorToCSV import main
+from ETL.Service.TransformPaperToCSV import main
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
