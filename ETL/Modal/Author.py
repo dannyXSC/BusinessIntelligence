@@ -84,6 +84,13 @@ class Author:
             self.interests)
 
     def to_dict(self):
+        # 现在把interest作为属性
+        interest_str = ""
+        cnt = 0
+        for interest in self.interests:
+            if cnt > 0:
+                interest_str += "," + interest.name
+            cnt += 1
         return {
             "index": self.index,
             "name": self.name,
@@ -91,5 +98,6 @@ class Author:
             "cn": self.cn,
             "hi": self.hi,
             "pi": self.pi,
-            "upi": self.upi
+            "upi": self.upi,
+            "interest": interest_str
         }

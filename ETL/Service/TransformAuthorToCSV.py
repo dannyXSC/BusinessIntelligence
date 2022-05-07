@@ -18,7 +18,6 @@ author_interest_csv_path = get_author_interest_csv_path()
 author_set = set()
 author_list = []
 affiliations_list = []
-interests_list = []
 cnt = 0
 
 
@@ -34,10 +33,6 @@ def read_author_info():
             if affiliation.strip() == "":
                 continue
             affiliations_list.append({"author": author.name, "affiliation": affiliation})
-        for interest in author.get_interests_name_list():
-            if interest.strip() == "":
-                continue
-            interests_list.append({"author": author.name, "interest": interest})
 
         cnt += 1
         if cnt % 1000 == 0:
@@ -48,7 +43,8 @@ def read_author_info():
 def write_csv():
     pd.DataFrame(author_list).to_csv(author_csv_path, index=False, sep=';')
     pd.DataFrame(affiliations_list).to_csv(author_affiliation_csv_path, index=False, sep=';')
-    pd.DataFrame(interests_list).to_csv(author_interest_csv_path, index=False, sep=';')
+    # 不再把interest作为节点
+    # pd.DataFrame(interests_list).to_csv(author_interest_csv_path, index=False, sep=';')
 
 
 def main():
