@@ -8,7 +8,7 @@
 """
 from py2neo import Graph, NodeMatcher, Node
 
-from ETL.Modal.Interest import Interest
+from Modal.Interest import Interest
 
 
 class InterestRepo:

@@ -8,8 +8,8 @@
 """
 import fileinput
 
-from ETL.Modal.Author import Author
-from ETL.utils import get_author_path
+from Modal.Author import Author
+from utils import get_author_path
 
 
 def read_author():

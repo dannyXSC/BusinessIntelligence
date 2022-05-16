@@ -8,8 +8,8 @@
 """
 import fileinput
 
-from ETL.Modal.Collaboration import Collaboration
-from ETL.utils import get_coauthor_path
+from Modal.Collaboration import Collaboration
+from utils import get_coauthor_path
 
 
 def read_coauthor():

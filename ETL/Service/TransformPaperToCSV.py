@@ -8,8 +8,8 @@
 """
 import pandas as pd
 
-from ETL.Reader.PaperReader import read_paper
-from ETL.utils import *
+from Reader.PaperReader import read_paper
+from utils import *
 
 paper_path = get_paper_csv_path()
 paper_write_path = get_paper_write_csv_path()

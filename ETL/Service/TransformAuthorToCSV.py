@@ -8,8 +8,8 @@
 """
 import pandas as pd
 
-from ETL.Reader.AuthorReader import read_author
-from ETL.utils import *
+from Reader.AuthorReader import read_author
+from utils import *
 
 author_csv_path = get_author_csv_path()
 author_affiliation_csv_path = get_author_affiliation_csv_path()

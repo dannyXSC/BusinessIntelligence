@@ -8,8 +8,8 @@
 """
 import fileinput
 
-from ETL.Modal.Paper import Paper
-from ETL.utils import get_paper_path
+from Modal.Paper import Paper
+from utils import get_paper_path
 
 
 def read_paper():

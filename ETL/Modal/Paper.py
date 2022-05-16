@@ -6,7 +6,7 @@
 @createTime: 2022年05月04日 21点16分
 @Function: 请描述这个py文件的作用
 """
-from ETL.Modal.Author import Author
+from Modal.Author import Author
 
 
 class Paper:

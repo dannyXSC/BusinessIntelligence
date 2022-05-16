@@ -6,7 +6,7 @@
 @createTime: 2022年05月04日 21点47分
 @Function: 请描述这个py文件的作用
 """
-from ETL.Modal.Affiliation import Affiliation
+from Modal.Affiliation import Affiliation
 from py2neo import Graph, NodeMatcher, Node
 
 

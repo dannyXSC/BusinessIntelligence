@@ -8,8 +8,8 @@
 """
 from py2neo import Node, Graph
 
-from ETL.Modal.Affiliation import Affiliation
-from ETL.Modal.Interest import Interest
+from Modal.Affiliation import Affiliation
+from Modal.Interest import Interest
 
 
 class Author:

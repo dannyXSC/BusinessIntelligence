@@ -8,9 +8,9 @@
 """
 from py2neo import Graph, NodeMatcher, Node, Relationship
 
-from ETL.Modal.Author import Author
-from ETL.Repository.AffiliationRepo import AffiliationRepo
-from ETL.Repository.InterestRepo import InterestRepo
+from Modal.Author import Author
+from Repository.AffiliationRepo import AffiliationRepo
+from Repository.InterestRepo import InterestRepo
 
 
 class AuthorRepo:

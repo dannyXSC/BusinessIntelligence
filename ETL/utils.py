@@ -9,7 +9,7 @@
 import time
 
 import yaml
-from ETL.EnvironmentVariable import *
+from EnvironmentVariable import *
 
 
 def get_neo4j_info():

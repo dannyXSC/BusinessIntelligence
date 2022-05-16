@@ -9,11 +9,11 @@
 from py2neo import *
 import time
 
-from ETL.Reader.AuthorReader import read_author
-from ETL.Repository.AffiliationRepo import AffiliationRepo
-from ETL.Repository.AuthorRepo import AuthorRepo
-from ETL.Repository.InterestRepo import InterestRepo
-from ETL.utils import *
+from Reader.AuthorReader import read_author
+from Repository.AffiliationRepo import AffiliationRepo
+from Repository.AuthorRepo import AuthorRepo
+from Repository.InterestRepo import InterestRepo
+from utils import *
 
 url, account, password = get_neo4j_info()
 graph = Graph(url, auth=(account, password))
