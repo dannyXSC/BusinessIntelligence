@@ -9,5 +9,6 @@
 from ETL.Service.TransformPaperToCSV import main
 
 if __name__ == '__main__':
-    for i in range(2,1):
-        print(i)
+    if "":
+        print("123")
+

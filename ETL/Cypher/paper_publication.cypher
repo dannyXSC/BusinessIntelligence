@@ -6,7 +6,7 @@ LOAD CSV WITH HEADERS FROM
 FIELDTERMINATOR ';'
 WITH line
 
-MERGE ( p:Paper {index: toInt(line.paper)} )
+MERGE ( p:Paper {index: toInteger(line.paper)} )
 MERGE ( v:Venue {name: line.venue} )
 
 CREATE ( v ) - [:PUBLICATION] -> ( p )

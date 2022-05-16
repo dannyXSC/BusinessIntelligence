@@ -14,3 +14,9 @@ class Collaboration:
         self.name2 = name2
         self.count = count
 
+    def to_dict(self):
+        return {
+            "name1": self.name1,
+            "name2": self.name2,
+            "count": self.count
+        }

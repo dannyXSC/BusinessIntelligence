@@ -1,6 +1,6 @@
 CREATE CONSTRAINT ON (a:Author) ASSERT a.name IS UNIQUE;
+CREATE CONSTRAINT ON (a:Author) ASSERT a.index IS UNIQUE;
 CREATE CONSTRAINT ON (af:Affiliation)  ASSERT af.name IS UNIQUE;
-CREATE CONSTRAINT ON (i:INTEREST) ASSERT i.name IS UNIQUE;
 
 USING PERIODIC COMMIT
 LOAD CSV WITH HEADERS FROM
@@ -19,3 +19,4 @@ CREATE (author:Author
          upi:toFloat(line.upi),
          interest: line.interest
        })
+;

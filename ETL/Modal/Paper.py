@@ -22,7 +22,8 @@ class Paper:
         self.authors = authors
         self.venue = venue
         self.cites = cites
-        self.abstract = abstract
+        self.abstract = ""
+        self.set_abstract(abstract)
 
     def to_dict(self):
         return {
@@ -47,10 +48,14 @@ class Paper:
         return res
 
     def get_cite_relations(self):
+
         return [CiteRelation(paper=self, cite=cite) for cite in self.cites]
 
     def get_publication_relations(self):
-        return [PublicationRelation(paper=self, venue=self.venue)]
+        if self.venue:
+            return [PublicationRelation(paper=self, venue=self.venue)]
+        else:
+            return []
 
     def set_index(self, index):
         self.index = index
@@ -71,7 +76,10 @@ class Paper:
         self.cites.append(cite)
 
     def set_abstract(self, abstract):
-        self.abstract = abstract
+        self.abstract = \
+            abstract.replace("\\", "") \
+                .replace("\"", "") \
+                .replace("\'", "")
 
 
 class WriteRelation:

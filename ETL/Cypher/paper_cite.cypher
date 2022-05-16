@@ -4,8 +4,8 @@ LOAD CSV WITH HEADERS FROM
 FIELDTERMINATOR ';'
 WITH line
 
-MERGE (p:Paper {index: toInt(line.paper)})
-MERGE (c:Paper {index: toInt(line.cited)})
+MERGE (p:Paper {index: toInteger(line.paper)})
+MERGE (c:Paper {index: toInteger(line.cite)})
 
 create (p)-[:CITE]->(c)
 ;

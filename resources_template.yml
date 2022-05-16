@@ -1,0 +1,20 @@
+neo4j:
+  url: your_neo4j_url
+  account: your_neo4j_account
+  password: your_neo4j_password
+
+AMiner:
+  author_path: xx
+  coauthor_path: xx
+  paper_path: xx
+
+CSV:
+  author_path: xx
+  author_affiliation_path: xx
+  author_interest_path: xx
+  paper_path: xx
+  paper_write_path: xx
+  paper_participate_path: xx
+  paper_cite_path: xx
+  paper_publication_path: xx
+  coauthor_path: xx

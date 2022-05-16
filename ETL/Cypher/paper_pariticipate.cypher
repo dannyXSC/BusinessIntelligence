@@ -5,7 +5,7 @@ FIELDTERMINATOR ';'
 WITH line
 
 MERGE (author:Author {name: line.author})
-MERGE (p:Paper {index: toInt(line.paper)})
+MERGE (p:Paper {index: toInteger(line.paper)})
 
 CREATE (author)-[:PARTICIPATE_IN]->(p)
 ;

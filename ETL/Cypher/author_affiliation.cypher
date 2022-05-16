@@ -9,3 +9,4 @@ MERGE ( affiliation:Affiliation {name: line.affiliation} )
 
 create (author)-[:AFFILIATED_WITH]->(affiliation)
 create (affiliation)-[:HAVE]->(author)
+;

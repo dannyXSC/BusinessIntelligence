@@ -132,6 +132,16 @@ def get_paper_participate_csv_path():
             return ""
 
 
+def get_coauthor_csv_path():
+    with open(resource_path, "r") as stream:
+        try:
+            obj = yaml.safe_load(stream)["CSV"]
+            return obj["coauthor_path"]
+        except yaml.YAMLError as exc:
+            print(exc)
+            return ""
+
+
 def timer(keyword=''):
     def func(fun):
         def wrapper(*args, **kwargs):

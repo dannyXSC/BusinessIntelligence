@@ -24,7 +24,10 @@ def read_paper():
                 continue
 
         label = line[:line.find(" ")].strip()
-        value = line[line.find(" ") + 1:].strip()
+        value = line[line.find(" ") + 1:].strip()\
+            .replace("\\", "")\
+            .replace("\"", "")\
+            .replace("\'", "")
         if value == "":
             continue
 
